@@ -1,0 +1,122 @@
+/* Prevent horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Page title */
+.cart-page h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #333;
+}
+
+/* Empty cart text */
+.empty-cart {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Cart container - 4 cards per row */
+.cart-grid {
+  display: flex;
+  flex-wrap: wrap;             
+  justify-content: start;      
+  gap: 20px;                    
+  max-width: 1300px;            
+  margin: 0 auto;               
+  padding: 0 10px;              
+  box-sizing: border-box;
+}
+
+/* Individual card styling */
+.cart-card {
+  height: 450px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;                 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Product image */
+.cart-card img {
+  width: 95%;
+  height: 200px;
+  margin: 8px;
+  border-radius: 10px;
+  object-fit: cover;           
+}
+
+/* Info text */
+.cart-info {
+  padding: 14px;
+}
+
+.cart-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.price {
+  font-weight: 700;
+  color: green;
+  margin-bottom: 10px;
+}
+
+/* Remove button */
+.remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Checkout Section */
+.checkout-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.checkout-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+}

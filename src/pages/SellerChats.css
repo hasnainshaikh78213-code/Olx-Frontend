@@ -1,0 +1,58 @@
+.seller-chats-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.seller-chats-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #222;
+}
+
+.loading,
+.no-chats {
+  text-align: center;
+  color: #555;
+}
+
+.chats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chat-item:hover {
+  background: #f7f7f7;
+}
+
+.chat-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.last-message {
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.chat-arrow {
+  font-size: 20px;
+  color: #aaa;
+}

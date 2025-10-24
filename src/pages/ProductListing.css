@@ -1,0 +1,109 @@
+/* Container */
+.listing-container {
+  max-width: 1500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Title */
+.listing-title {
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Wrapper for all cards */
+.listing-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 25px;
+}
+
+/* Each card */
+.listing-card {
+  flex: 1 1 calc(25% - 25px); /* 4 per row */
+  max-width: calc(25% - 25px);
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image */
+.listing-card-image {
+  width: 95%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Product info */
+.listing-card-info {
+  text-align: center;
+  padding: 12px;
+}
+
+/* Product price */
+.listing-card-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 6px;
+}
+
+/* Product title */
+.listing-card-title {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Time text */
+.listing-card-time {
+  font-size: 13px;
+  color: #777;
+}
+
+/* No products text */
+.no-products-text {
+  color: #666;
+  font-size: 16px;
+  margin-left: 60px;
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .listing-card {
+    flex: 1 1 calc(33.33% - 25px); /* 3 per row */
+    max-width: calc(33.33% - 25px);
+  }
+}
+
+@media (max-width: 900px) {
+  .listing-card {
+    flex: 1 1 calc(50% - 25px); /* 2 per row */
+    max-width: calc(50% - 25px);
+  }
+}
+
+@media (max-width: 600px) {
+  .listing-card {
+    flex: 1 1 100%; /* 1 per row */
+    max-width: 100%;
+  }
+}

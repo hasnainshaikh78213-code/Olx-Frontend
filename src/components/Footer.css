@@ -1,0 +1,87 @@
+.footer {
+  background: #ebeeef;
+  padding: 30px 20px 10px;
+  font-family: Arial, sans-serif;
+  color: #002f34;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.footer-section ul li:hover {
+  text-decoration: underline;
+}
+
+.follow-us .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.follow-us .social-icons a {
+  font-size: 20px;
+  color: #002f34;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-section h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #002f34;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #002f34;  
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #002f34;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  background: #002f34;
+  color: #fff;
+}

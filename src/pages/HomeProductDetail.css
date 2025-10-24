@@ -1,0 +1,129 @@
+/* Page background */
+.home-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+/* Main card */
+.home-detail-card {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background: #fff;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.home-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Product image */
+.home-detail-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-detail-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Product info */
+.home-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.home-detail-info h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.home-detail-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: green;
+}
+
+.home-detail-category {
+  font-size: 16px;
+  color: #555;
+  background: #eef7f1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.home-detail-description {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.home-detail-seller {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+  background: #f4f4f4;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* Chat Button */
+.home-detail-chat-btn {
+  margin-top: 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.home-detail-chat-btn:hover {
+  background-color: green;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-detail-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .home-detail-image img {
+    max-width: 100%;
+  }
+
+  .home-detail-info h2 {
+    font-size: 24px;
+  }
+
+  .home-detail-price {
+    font-size: 20px;
+  }
+}
