@@ -8,7 +8,7 @@ function Products() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/products/all", {
+    fetch("https://olx-backend-blue.vercel.app/api/products/all", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -43,7 +43,7 @@ function Products() {
           {products.map((p) => (
             <div className="admin-product-card" key={p._id}>
               <img
-                src={`http://localhost:5000/${p.images?.[0] || ""}`}
+                src={`https://olx-backend-blue.vercel.app/${p.images?.[0] || ""}`}
                 alt={p.title}
                 className="admin-product-image"
               />
