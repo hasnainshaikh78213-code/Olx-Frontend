@@ -112,7 +112,7 @@ function Home() {
               <Link to={`/product2/${item._id}`} key={item._id} className="home-link-card">
                 <div className="home-product-card">
                   <img
-                    src={`https://olx-backend-blue.vercel.app/${item.images[0]}`}
+                    src={`https://olx-backend-blue.vercel.app${item.images[0]}`}
                     alt={item.title}
                   />
                   <div className="home-product-info">
