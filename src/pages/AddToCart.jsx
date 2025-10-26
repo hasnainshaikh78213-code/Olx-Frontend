@@ -91,7 +91,7 @@ function AddToCart() {
                 <img
                   src={
                     item?.images?.length
-                      ? `http://localhost:5000/${item.images[0]}`
+                      ? `https://olx-backend-blue.vercel.app${item.images[0]}`
                       : "https://via.placeholder.com/150"
                   }
                   alt={item?.title || "No title"}
