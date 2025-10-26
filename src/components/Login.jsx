@@ -17,7 +17,7 @@ function Login({ onSwitch }) {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/login", form);
+      const res = await axios.post("https://olx-backend-blue.vercel.app/api/users/login", form);
 
       // ✅ Check if backend actually returned a token
       if (res.data && res.data.token) {
