@@ -10,7 +10,7 @@ function Orders() {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/chats/admin/all", {
+        const res = await fetch("https://olx-backend-blue.vercel.app/api/chats/admin/all", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

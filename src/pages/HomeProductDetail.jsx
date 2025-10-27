@@ -9,7 +9,7 @@ function HomeProductDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`https://olx-backend-blue.vercel.app/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.error("Failed to fetch product:", err))
@@ -21,7 +21,7 @@ function HomeProductDetail() {
     if (!token) return alert("Please login to chat");
 
     try {
-      const res = await fetch("http://localhost:5000/api/chats/start", {
+      const res = await fetch("https://olx-backend-blue.vercel.app/api/chats/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function HomeProductDetail() {
       <div className="home-detail-card">
         <div className="home-detail-image">
           <img
-            src={`http://localhost:5000/${product.images?.[0] || ""}`}
+            src={`https://olx-backend-blue.vercel.app${product.images?.[0] || ""}`}
             alt={product.title}
           />
         </div>

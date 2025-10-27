@@ -21,7 +21,7 @@ function Signup({ onSwitch }) {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/signup", form);
+      const res = await axios.post("https://olx-backend-blue.vercel.app/api/users/signup", form);
 
       console.log("Signup Response:", res.data);
 

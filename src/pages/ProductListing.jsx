@@ -50,7 +50,7 @@ function ProductListing() {
               <img
                 src={
                   item.images && item.images.length > 0
-                    ? `http://localhost:5000/${item.images[0].replace(/\\/g, "/")}`
+                    ? `https://olx-backend-blue.vercel.app${item.images[0].replace(/\\/g, "/")}`
                     : "/no-image.png"
                 }
                 alt={item.title}
