@@ -184,7 +184,7 @@ function ProductAdd() {
             productList.map((product) => (
               <div className="product-card" key={product._id}>
                 <img
-                  src={`https://olx-backend-blue.vercel.apphttps://olx-backend-blue.vercel.app/${product.images[0]}`}
+                  src={`https://olx-backend-blue.vercel.app${product.images[0]}`}
                   alt={product.title}
                 />
                 <h4>{product.title}</h4>
