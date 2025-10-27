@@ -9,7 +9,7 @@ function Users() {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem("token"); 
-        const res = await fetch("http://localhost:5000/api/users", {
+        const res = await fetch("https://olx-backend-blue.vercel.app/api/users", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`, 
