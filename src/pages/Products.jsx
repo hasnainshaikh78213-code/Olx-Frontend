@@ -43,7 +43,7 @@ function Products() {
           {products.map((p) => (
             <div className="admin-product-card" key={p._id}>
               <img
-                src={`https://olx-backend-blue.vercel.app/${p.images?.[0] || ""}`}
+                src={`https://olx-backend-blue.vercel.app${p.images?.[0] || ""}`}
                 alt={p.title}
                 className="admin-product-image"
               />
