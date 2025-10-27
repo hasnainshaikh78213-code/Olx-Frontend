@@ -17,7 +17,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/users/profile", {
+      const res = await axios.get("https://olx-backend-blue.vercel.app/api/users/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -35,7 +35,7 @@ const Profile = () => {
   const fetchUserProducts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/products", {
+      const res = await axios.get("https://olx-backend-blue.vercel.app/api/products", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(res.data);
@@ -68,7 +68,7 @@ const Profile = () => {
       formData.append("username", form.username);
       if (file) formData.append("avatar", file);
 
-      const res = await axios.put("http://localhost:5000/api/users/profile", formData, {
+      const res = await axios.put("https://olx-backend-blue.vercel.app/api/users/profile", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -138,7 +138,7 @@ const Profile = () => {
                 <img
                   src={
                     product.images && product.images.length > 0
-                      ? `http://localhost:5000/${product.images[0].replace(/\\/g, "/")}`
+                      ? `https://olx-backend-blue.vercel.app${product.images[0].replace(/\\/g, "/")}`
                       : "/no-image.png"
                   }
                   alt={product.title}
