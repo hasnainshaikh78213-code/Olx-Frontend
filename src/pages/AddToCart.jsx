@@ -88,14 +88,11 @@ function AddToCart() {
           <div className="cart-grid">
             {cart.map((item) => (
               <div className="cart-card" key={item._id}>
-                <img
-                  src={
-                    item?.images?.length
-                      ? `https://olx-backend-blue.vercel.app${item.images[0]}`
-                      : "https://via.placeholder.com/150"
-                  }
-                  alt={item?.title || "No title"}
-                />
+                                <img
+  src={item.images?.[0]}
+  alt={item.title}
+  onError={(e) => (e.target.src = "/fallback-image.png")}
+/>
                 <div className="cart-info">
                   <h3>{item.title}</h3>
                   <p className="home-description">{item.description}</p>
