@@ -184,10 +184,11 @@ function ProductAdd() {
             productList.map((product) => (
               <div className="product-card" key={product._id}>
                 <img
-  src={product.images?.[0] || "/fallback-image.png"}
+  src={product.images?.[0]}
   alt={product.title}
   onError={(e) => (e.target.src = "/fallback-image.png")}
 />
+
 
 
                 <h4>{product.title}</h4>
