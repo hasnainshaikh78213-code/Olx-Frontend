@@ -49,9 +49,10 @@ function HomeProductDetail() {
       <div className="home-detail-card">
         <div className="home-detail-image">
           <img
-            src={`https://olx-backend-blue.vercel.app${product.images?.[0] || ""}`}
-            alt={product.title}
-          />
+  src={product.images?.[0]}
+  alt={product.title}
+  onError={(e) => (e.target.src = "/fallback-image.png")}
+/>
         </div>
 
         <div className="home-detail-info">
