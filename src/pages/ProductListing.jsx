@@ -48,14 +48,11 @@ function ProductListing() {
               className="listing-card"
             >
               <img
-                src={
-                  item.images && item.images.length > 0
-                    ? `https://olx-backend-blue.vercel.app${item.images[0].replace(/\\/g, "/")}`
-                    : "/no-image.png"
-                }
-                alt={item.title}
-                className="listing-card-image"
-              />
+  src={item.images?.[0] || "/no-image.png"}
+  alt={item.title}
+  className="listing-card-image"
+  onError={(e) => (e.target.src = "/no-image.png")}
+/>
               <div className="listing-card-info">
                 <h3 className="listing-card-price">PKR {item.price}</h3>
                 <p className="listing-card-title">{item.title}</p>

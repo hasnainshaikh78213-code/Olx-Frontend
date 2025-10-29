@@ -112,9 +112,10 @@ function Home() {
               <Link to={`/product2/${item._id}`} key={item._id} className="home-link-card">
                 <div className="home-product-card">
                   <img
-                    src={`https://olx-backend-blue.vercel.app${item.images[0]}`}
-                    alt={item.title}
-                  />
+  src={item.images?.[0]}
+  alt={item.title}
+  onError={(e) => (e.target.src = "/fallback-image.png")}
+/>
                   <div className="home-product-info">
                     <p className="home-title">{item.title}</p>
                     <p className="home-description">{item.description}</p>

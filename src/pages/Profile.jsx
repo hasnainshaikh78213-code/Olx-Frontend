@@ -136,13 +136,10 @@ const Profile = () => {
             {products.map((product) => (
               <div key={product._id} className="product-card">
                 <img
-                  src={
-                    product.images && product.images.length > 0
-                      ? `https://olx-backend-blue.vercel.app${product.images[0].replace(/\\/g, "/")}`
-                      : "/no-image.png"
-                  }
-                  alt={product.title}
-                />
+  src={product.images?.[0] || "/no-image.png"}
+  alt={product.title}
+  onError={(e) => (e.target.src = "/no-image.png")}
+/>
                 <div className="product-info">
                   <h4>{product.title}</h4>
                   <p>Rs {product.price}</p>
