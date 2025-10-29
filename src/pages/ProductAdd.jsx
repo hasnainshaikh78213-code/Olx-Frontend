@@ -184,14 +184,11 @@ function ProductAdd() {
             productList.map((product) => (
               <div className="product-card" key={product._id}>
                 <img
-  src={
-    product.images[0]?.startsWith("http")
-      ? product.images[0]
-      : `https://olx-backend-blue.vercel.app${product.images[0]}`
-  }
+  src={product.images?.[0] || "/fallback-image.png"}
   alt={product.title}
   onError={(e) => (e.target.src = "/fallback-image.png")}
 />
+
 
                 <h4>{product.title}</h4>
                 <p className="home-description">{product.description}</p>
