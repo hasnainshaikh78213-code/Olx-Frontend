@@ -130,6 +130,7 @@
   border-radius: 10px;
   margin-top: 10px;
   object-fit: cover;
+  display: block;
 }
 
 /* Info */
