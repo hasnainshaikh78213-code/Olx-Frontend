@@ -14,23 +14,44 @@ const Profile = () => {
     fetchUserProducts();
   }, []);
 
-  const fetchProfile = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const res = await axios.get("https://olx-backend-blue.vercel.app/api/users/profile", {
-        headers: { Authorization: `Bearer ${token}` },
+  // ==================== Update Profile ====================
+export const updateProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.username = req.body.username || user.username;
+
+    // ✅ If new image uploaded, replace old one in Cloudinary
+    if (req.file) {
+      const b64 = Buffer.from(req.file.buffer).toString("base64");
+      const dataURI = `data:${req.file.mimetype};base64,${b64}`;
+      const uploadResponse = await cloudinary.uploader.upload(dataURI, {
+        folder: "olx_avatars",
       });
 
-      setUser(res.data);
-      setForm({
-        name: res.data.name || "",
-        email: res.data.email || "",
-        username: res.data.username || "",
-      });
-    } catch (err) {
-      console.error("Error loading profile:", err);
+      user.avatar = uploadResponse.secure_url; // ✅ Save only Cloudinary URL
     }
-  };
+
+    const updatedUser = await user.save();
+
+    // ✅ Send clean, full data (Cloudinary already gives https)
+    const userWithFullAvatar = {
+      ...updatedUser._doc,
+      avatar: updatedUser.avatar || null,
+    };
+
+    res.json(userWithFullAvatar);
+  } catch (err) {
+    console.error("Profile update error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 
   const fetchUserProducts = async () => {
     try {
