@@ -66,7 +66,7 @@ function AddToCart() {
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
-
+      localStorage.setItem("cart", JSON.stringify(cart));
       navigate("/checkout");
 
     } catch (error) {
