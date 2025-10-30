@@ -59,6 +59,8 @@ const Profile = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("token:", localStorage.getItem("token"));
+
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
