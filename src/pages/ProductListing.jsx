@@ -11,7 +11,7 @@ function ProductListing() {
   const fetchCategoryProducts = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await api.get("/products");
+      const res = await api.get("/products/all");
 
       const filtered = res.data.filter((p) => {
         if (!p.category) return false;
