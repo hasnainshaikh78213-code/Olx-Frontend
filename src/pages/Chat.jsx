@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import "./Chat.css";
 
-
-const socket = io("https://olx-backend-blue.vercel.app", {
-  path: "/api/socket",
-  transports: ["websocket"]
-});
+// const socket = io("https://olx-backend-blue.vercel.app", {
+//   transports: ["websocket"]
+// }); 
 
 function Chat() {
   const { id } = useParams();
@@ -32,7 +30,7 @@ function Chat() {
         setMessages(res.data.messages || []);
 
         // JOIN SOCKET ROOM
-        socket.emit("join_chat", id);
+        // socket.emit("join_chat", id);
 
       } catch (err) {
         console.error("Error loading chat:", err);
@@ -48,13 +46,15 @@ function Chat() {
   }, [messages]);
 
   // Receive real-time messages
-  useEffect(() => {
-  socket.on("receive_message", (data) => {
-    setMessages(prev => [...prev, data]);
-  });
+  // useEffect(() => {
+  //   socket.on("receive_message", (data) => {
+  //     setMessages((prev) => [...prev, data]);
+  //   });
 
-  return () => socket.off("receive_message");
-}, []);
+  //   return () => {
+  //     socket.off("receive_message");
+  //   };
+  // }, []);
 
   const handleSend = async () => {
     if (!newMessage.trim()) return;
@@ -77,7 +77,7 @@ function Chat() {
     }
 
     // Emit real-time socket message
-    socket.emit("send_message", outgoingMsg);
+    // socket.emit("send_message", outgoingMsg);
 
     // Show message instantly on sender side
     setMessages((prev) => [...prev, outgoingMsg]);
