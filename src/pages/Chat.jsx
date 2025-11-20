@@ -4,7 +4,7 @@ import api from "../api";
 import { io } from "socket.io-client";
 import "./Chat.css";
 
-const socket = io("https://olx-backend-blue.vercel.app"); // IMPORTANT
+const socket = io("http://localhost:5000"); // IMPORTANT
 
 function Chat() {
   const { id } = useParams();
